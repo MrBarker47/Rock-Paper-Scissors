@@ -4,15 +4,6 @@ function getComputerChoice() {
     return  ['rock', 'paper', 'scissors']
 }
 
-let playerSelection = prompt("rock, paper, scissors shoot!"); 
-
-if(playerSelection === 'paper') {
-    console.log("You win! Paper beats rock")
-} else if (playerSelection === 'scissors') {
-    console.log("You Win! scissors beats paper")
-} else if (playerSelection === 'rock') {
-    console.log("You lose!  ")
-}
 
 //Create a playRound() function, with two parameters 
 //That returns a you lose! paper beats rock 
@@ -20,6 +11,18 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
+
+let playerSelection; 
+let computerSelection = getComputerChoice();
+
+if(playerSelection === 'paper') {
+    console.log('You Won! Paper beats rock');
+} else if(playerSelection === 'rock') {
+    console.log('You Lose! Paper beats rock' )
+} else if(playerSelection === 'scissors') {
+    console.log('You Win! Scissors beat paper')
+}  
+     
 
 
 
