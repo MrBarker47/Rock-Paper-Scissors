@@ -1,41 +1,21 @@
 //Create a function called getComputerChoice()
 //Randomly return rock paper scissors 
-function getComputerChoice() {
-    return  ['rock', 'paper', 'scissors']
-}
 
+// let odin = prompt("Rock, Paper, Scissors Shoot");
 
-//Create a playRound() function, with two parameters 
-//That returns a you lose! paper beats rock 
-function playRound(playerSelection, computerSelection) {
+function getComputerChoice(game) {
+        
+        const random = Math.floor(Math.random() * game.length);
+        const item = game[random];
+        
+        return item;
+    }
 
-}
+     let newGame = ['rock', 'paper', 'scissors'];
+     let result = getComputerChoice(newGame);
+     console.log(result);
 
-
-let playerSelection; 
-let computerSelection = getComputerChoice();
-
-if(playerSelection === 'paper') {
-    console.log('You Won! Paper beats rock');
-} else if(playerSelection === 'rock') {
-    console.log('You Lose! Paper beats rock' )
-} else if(playerSelection === 'scissors') {
-    console.log('You Win! Scissors beat paper')
-}  
      
+    function playRound(playerSelection, computerSelection) {
 
-
-
-
-//Create a new functions called playGame function
-
-
-
-
-
-
-
-/* Use the previous function inside of this one 
-play a five round games that keeps score and lets you know 
-a winner and loser at the end 
-*/
+      if(playerSel
