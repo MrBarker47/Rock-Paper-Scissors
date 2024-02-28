@@ -3,19 +3,38 @@
 
 // let odin = prompt("Rock, Paper, Scissors Shoot");
 
-function getComputerChoice(game) {
+function getComputerChoice() {
         
-        const random = Math.floor(Math.random() * game.length);
-        const item = game[random];
-        
-        return item;
+        let newGame = ['rock', 'paper', 'scissors'];     
+        let random = newGame[Math.floor(Math.random() * newGame.length)];
+        return random;
     }
 
-     let newGame = ['rock', 'paper', 'scissors'];
-     let result = getComputerChoice(newGame);
-     console.log(result);
+    //  let newGame = ['rock', 'paper', 'scissors'];
+    //  let result = getComputerChoice(newGame);
+    //  console.log(result);
 
      
     function playRound(playerSelection, computerSelection) {
 
-      if(playerSel
+      if(playerSelection == computerSelection) {
+        console.log("It's a tie");
+        } else if ((playerSelection === 'rock') && (computerSelection === 'scissors')) {
+            console.log('You Win! rock beats scissors');
+        } else if ((playerSelection === 'paper') && (computerSelection === 'scissors')) {
+            console.log('You Lose! Scissors beat paper')
+        } else if ((playerSelection === 'scissors') && (computerSelection === 'rock')) {
+            console.log('You Lose! Rock beats Scissors')
+        } else if ((playerSelection === 'rock') && (computerSelection === 'paper')) {
+            console.log('You Lose! Paper beats rock')
+        } else if ((playerSelection === ''))  {
+
+        }
+
+    }
+  
+
+  let playerSelection = prompt("Rock, Paper, Scissors Shoot");
+  let computerSelection = getComputerChoice();
+  console.log(playRound(playerSelection, computerSelection));
+
