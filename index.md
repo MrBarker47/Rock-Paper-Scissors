@@ -1,0 +1,2 @@
+- There should be three buttons for the user to choose from.
+  -Those three buttons Rock, Paper or Scissors
