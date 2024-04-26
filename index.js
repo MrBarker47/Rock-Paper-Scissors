@@ -36,7 +36,6 @@ function playGame(playerSelection, computerSelection) {
   }
 }
 
-let playerSelection = prompt("Rock, Paper, Scissors Shoot");
 let computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
 
