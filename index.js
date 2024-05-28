@@ -38,37 +38,28 @@ function playRound(getHumanChoice, getComputerChoice) {
     computerScore += 1;
     console.log(`You Lose!, Computer Score: ${computerScore}`);
   } else {
-    console.log("tie");
+    console.log("tie game");
   }
 }
 
+//This will be a function called winner. Which it will determine who is the winner
 function winner() {
-  if (humanSelection == 5 || computerSelection == 5) {
-    console.log("Player Wins");
-  } else {
-    console.log("Computer Wins!");
+  if (humanSelection < computerSelection) {
+    console.log("Player Wins!");
+  } else if (computerSelection > humanSelection) {
+    console.log("Computer Wins");
   }
 }
-
-// function winner() {
-//   if (humanSelection === 5) {
-//     console.log("Player Wins, the game!");
-//   } else if (computerSelection === 5) {
-//     console.log("Computer Wins, the game");
-//   }
-// }
 
 //Rounds: There is going to be a couple of rounds of this game.
 function game() {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 7; i++) {
     playRound();
     humanSelection = getHumanChoice();
     computerSelection = getComputerChoice();
-    let humanScore = 0;
-    let computerScore = 0;
+    humanScore;
+    computerScore;
   }
-  console.log(humanScore++);
-  console.log(computerScore++);
 }
-
 game();
+winner();
