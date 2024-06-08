@@ -1,8 +1,15 @@
-// The human score and computer score
+// // The human score and computer score
 let humanSelection = getHumanChoice();
 let computerSelection = getComputerChoice();
 let humanScore = 0;
 let computerScore = 0;
+// let newRock = document.getElementById("rock");
+// let newPaper = document.getElementById("paper");
+// let newScissors = document.getElementById("scissors");
+// let rock = document.createElement("p");
+// let paper = document.createElement("p");
+// let scissors = document.createElement("p");
+// let newResults = document.createElement("p");
 
 //Write ComputerChoice function that will randomly return a of the strings "Rock, Paper, Scissors"
 function getComputerChoice() {
@@ -17,7 +24,6 @@ function getHumanChoice() {
   return user;
 }
 
-//PlayRound: This is how the game is going to go.
 function playRound(getHumanChoice, getComputerChoice) {
   if (humanSelection === "rock" && computerSelection === "paper") {
     computerScore += 1;
@@ -38,21 +44,23 @@ function playRound(getHumanChoice, getComputerChoice) {
     computerScore += 1;
     console.log(`You Lose!, Computer Score: ${computerScore}`);
   } else {
-    console.log("tie game");
+    console.log("tie");
   }
 }
 
+//Events
+
 //This will be a function called winner. Which it will determine who is the winner
 function winner() {
-  if (humanSelection < computerSelection) {
-    console.log("Player Wins!");
-  } else if (computerSelection > humanSelection) {
-    console.log("Computer Wins");
+  if (humanScore > computerScore) {
+    console.log("You Win!");
+  } else if (humanScore < computerScore) {
+    console.log("Computer Win");
   }
 }
 
 //Rounds: There is going to be a couple of rounds of this game.
-function game() {
+function playGame() {
   for (let i = 0; i < 7; i++) {
     playRound();
     humanSelection = getHumanChoice();
@@ -61,5 +69,6 @@ function game() {
     computerScore;
   }
 }
-game();
+
+playGame();
 winner();
