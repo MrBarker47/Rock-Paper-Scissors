@@ -6,6 +6,10 @@
     
 }
 
+#game {
+    text-align: center;
+}
+
 button {
     font-size: 20px;
 }
@@ -15,3 +19,26 @@ h1 {
     text-align: center;
     margin-top: 220px;
 }
+
+.header {
+    text-align: center;
+}
+
+	/* body */
+    #player {
+        margin-top: 120px;
+    }
+    
+    
+    .fa-hand-back-fist {
+        color: red ;
+    }
+    
+    .fa-hand {
+         color: blue;
+    }
+    
+    .fa-hand-scissors {
+        color: green;
+    }
+    

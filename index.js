@@ -1,46 +1,74 @@
-//Create a function called getComputerChoice()
-//Randomly return rock paper scissors
-//Randomly return rock paper scissors
+// // The human score and computer score
+let humanSelection = getHumanChoice();
+let computerSelection = getComputerChoice();
+let humanScore = 0;
+let computerScore = 0;
+let newRock = document.getElementById("rock");
+let newPaper = document.getElementById("paper");
+let newScissors = document.getElementById("scissors");
+let rock = document.createElement("p");
+let paper = document.createElement("p");
+let scissors = document.createElement("p");
+let newResults = document.createElement("p");
 
-// let odin = prompt("Rock, Paper, Scissors Shoot");
-
+//Write ComputerChoice function that will randomly return a of the strings "Rock, Paper, Scissors"
 function getComputerChoice() {
   let newGame = ["rock", "paper", "scissors"];
   let random = newGame[Math.floor(Math.random() * newGame.length)];
   return random;
 }
 
-function playRound(playerSelection, computerSelection) {
-  if (playerSelection === "rock" && computerSelection === "paper") {
-    console.log("You Lose! Paper beats rock");
-  } else if (playerSelection === "paper" && computerSelection === "rock") {
-    console.log("You Win! Paper beats rock");
-  } else if (playerSelection === "scissors" && computerSelection === "paper") {
-    console.log("You Win! Scissors beat paper");
-  } else if (playerSelection === "rock" && computerSelection === "scissors") {
-    console.log("You Win! Rock beat scissors");
-  } else if (playerSelection === "paper" && computerSelection === "scissors") {
-    console.log("You Lose! Scissors beat paper ");
-  } else if (playerSelection === "scissors" && computerSelection === "rock") {
-    console.log("You Lose! Rock beats scissors");
+//Next you'll get the human choice
+function getHumanChoice() {
+  let user = prompt("Pick one!");
+  return user;
+}
+
+function playRound(getHumanChoice, getComputerChoice) {
+  if (humanSelection === "rock" && computerSelection === "paper") {
+    computerScore += 1;
+    console.log(`You Lose, Computer Score: ${computerScore}`);
+  } else if (humanSelection === "rock" && computerSelection === "scissors") {
+    humanScore += 1;
+    console.log(`You Win! Player Score: ${humanScore}`);
+  } else if (humanSelection === "scissors" && computerSelection === "paper") {
+    humanScore += 1;
+    console.log(`You Win, Player Score: ${humanScore}`);
+  } else if (humanSelection === "paper" && computerSelection === "rock") {
+    humanScore += 1;
+    console.log(`You Win, Player Score: ${humanScore}`);
+  } else if (humanSelection === "paper" && computerSelection === "scissors") {
+    computerScore += 1;
+    console.log(`You Lose, Computer Score: ${computerScore}`);
+  } else if (humanSelection === "scissors" && computerSelection === "rock") {
+    computerScore += 1;
+    console.log(`You Lose!, Computer Score: ${computerScore}`);
   } else {
     console.log("tie");
   }
 }
 
-function playGame(playerSelection, computerSelection) {
-  let player = playerSelection;
-  let computer = computerSelection;
-  for (let i = 0; i < playRound.length; i++) {
-    console.log(playerSelection);
-    console.log(computerSelection);
+//Events
+
+//This will be a function called winner. Which it will determine who is the winner
+function winner() {
+  if (humanScore > computerScore) {
+    console.log("You Win!");
+  } else if (humanScore < computerScore) {
+    console.log("Computer Win");
   }
 }
 
-let computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+//Rounds: There is going to be a couple of rounds of this game.
+function playGame() {
+  for (let i = 0; i < 7; i++) {
+    playRound();
+    humanSelection = getHumanChoice();
+    computerSelection = getComputerChoice();
+    humanScore;
+    computerScore;
+  }
+}
 
-playGame(playRound(playerSelection, computerSelection));
-playGame(playRound(computerSelection, playerSelection));
-playGame(playRound(playerSelection, computerSelection));
-playGame(playRound(computerSelection, playerSelection));
+playGame();
+winner();
