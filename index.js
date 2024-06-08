@@ -3,13 +3,13 @@ let humanSelection = getHumanChoice();
 let computerSelection = getComputerChoice();
 let humanScore = 0;
 let computerScore = 0;
-// let newRock = document.getElementById("rock");
-// let newPaper = document.getElementById("paper");
-// let newScissors = document.getElementById("scissors");
-// let rock = document.createElement("p");
-// let paper = document.createElement("p");
-// let scissors = document.createElement("p");
-// let newResults = document.createElement("p");
+let newRock = document.getElementById("rock");
+let newPaper = document.getElementById("paper");
+let newScissors = document.getElementById("scissors");
+let rock = document.createElement("p");
+let paper = document.createElement("p");
+let scissors = document.createElement("p");
+let newResults = document.createElement("p");
 
 //Write ComputerChoice function that will randomly return a of the strings "Rock, Paper, Scissors"
 function getComputerChoice() {
